@@ -28,7 +28,11 @@ public:
             }
         }
         
-        if(dp[k+1][dst]!=INT_MAX) return dp[k+1][dst];
+        for(int i=0;i<=(k+1);i++)
+        {
+            mn = min(mn,dp[i][dst]);
+        }
+        if(mn!=INT_MAX) return mn;
         return -1;
         
     }
