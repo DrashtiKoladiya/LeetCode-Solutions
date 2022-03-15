@@ -1,8 +1,16 @@
 class Solution {
 public:
     // starting with the outer boundary we have to find the minimum height among them
-    // all the adjacent and non-visted elements height will be equals to max(their personal height,curr elements personal height)
-    // if any elements height changes then it means we can store some water there
+    // all the adjacent and non-visted element's height will be equals to max(their personal height,curr element's personal height)
+    // if any element's height changes then it means we can store some water there
+    
+    // 2 approaches to solve the above problem
+    // 1.BFS and priority_queue
+    // 2. Dijkstra's algorithm
+    //    in this approach first we will build a graph from the given matrix, where there will be undirected edge between every adjacent elemtent
+    //    Now, We will run dijkastra, in which we have to find the max weight of each path
+    //    Now, there can be multiple path to reach the boundary, we have to find the minimum weighted path
+    //    for every element, the water that can be trapped at that place will be max(0,weight of minimum weighted path among all the paths - its personal height,0)
     int trapRainWater(vector<vector<int>>& heightMap) {
         
         if(heightMap.size()==0) return 0;
