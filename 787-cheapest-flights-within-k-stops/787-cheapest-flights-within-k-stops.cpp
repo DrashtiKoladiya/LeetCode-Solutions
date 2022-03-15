@@ -2,7 +2,15 @@ class Solution {
 public:
     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
         
-        vector<vector<int>> dp(k+2,vector<int>(n,INT_MAX));
+        int dp[k+2][n];
+        
+        for(int i=0;i<=(k+1);i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                dp[i][j]=INT_MAX;
+            }
+        }
         
         for(int i=0;i<=k;i++)
         {
