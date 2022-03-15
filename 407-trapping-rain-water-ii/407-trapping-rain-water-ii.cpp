@@ -1,5 +1,8 @@
 class Solution {
 public:
+    // starting with the outer boundary we have to find the minimum height among them
+    // all the adjacent and non-visted elements height will be equals to max(their personal height,curr elements personal height)
+    // if any elements height changes then it means we can store some water there
     int trapRainWater(vector<vector<int>>& heightMap) {
         
         if(heightMap.size()==0) return 0;
