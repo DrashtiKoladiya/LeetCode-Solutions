@@ -22,7 +22,9 @@ public:
         {
             for(auto it:flights)
             {
-                if(dp[i-1][it[0]]!=INT_MAX)dp[i][it[1]] = min(dp[i][it[1]],dp[i-1][it[0]]+it[2]);
+                int u,v,d;
+                u = it[0], v=it[1], d=it[2];
+                if(dp[i-1][u]!=INT_MAX)dp[i][v] = min(dp[i][v],dp[i-1][u]+d);
             }
         }
         
