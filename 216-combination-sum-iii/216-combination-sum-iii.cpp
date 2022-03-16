@@ -18,7 +18,7 @@ public:
         
         ans1.push_back(i);
         cSum(k-1,n-i,ans1,i+1);
-        ans1.pop_back();
+        //ans1.pop_back();
     }
     vector<vector<int>> combinationSum3(int k, int n) {
         
