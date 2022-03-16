@@ -18,10 +18,8 @@ public:
     
     long long int dpp(string s,int i,int k)
     {  
-        //cout<<i<<" "<<k<<"\n";
         if(i==s.size())
         {
-            //cout<<i<<" "<<k<<"\n";
             if(k==0) return 0;
             else return INT_MAX;
         }
@@ -35,7 +33,6 @@ public:
         for(int k1=i;k1<s.size();k1++)
         {
             long long int tmp = dpp(s,k1+1,k-1);
-            //cout<<i<<" "<<k1<<" "<<k<<" "<<tmp<<" "<<PalindromeAdd(s.substr(i,k1-i+1))<<"\n";
             ans = min(ans,PalindromeAdd(s.substr(i,k1-i+1))+tmp);
         }
         
@@ -44,8 +41,6 @@ public:
     int palindromePartition(string s, int k) {
         
         memset(dp,-1,sizeof(dp));
-        
-        //cout<<PalindromeAdd("ahhsdiekfnejkc");
         
         return dpp(s,0,k);
         return 0;
