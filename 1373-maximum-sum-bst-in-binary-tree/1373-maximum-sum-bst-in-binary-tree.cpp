@@ -55,7 +55,6 @@ public:
         
         
         ans1= max(ans1,ans[0]);
-        //cout<<x[0]
         return ans;
         
         
