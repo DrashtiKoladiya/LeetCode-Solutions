@@ -29,11 +29,6 @@ public:
         sort(trips.begin(),trips.end(),compareFirst);
         sort(trips1.begin(),trips1.end(),compareLast);
         
-        for(int i=0;i<n;i++)
-        {
-            //cout<<trips1[i][0]<<" "<<trips1[i][1]<<" "<<trips1[i][2]<<"\n";
-        }
-        
         while(i<n)
         {
             //cout<<trips[i][1]<<" "<<trips1[j][2]<<" ";
