@@ -2,6 +2,7 @@ class Solution {
 public:
     int dp[4][3][5001];
     int MOD = 1e9+7;
+    int v1[8]={+2,-2,+2,-2,+1,+1,-1,-1},v2[8]={+1,+1,-1,-1,+2,-2,+2,-2};
     int dpp(int i,int j,int n)
     {
         if(i==3 && j!=1) return 0;
@@ -13,26 +14,15 @@ public:
         if(dp[i][j][n]!=-1) return dp[i][j][n];
         
         long long int ans = 0;
-        n--;
-        ans+= dpp(i+2,j+1,n);
-        ans%= MOD;
-        ans+= dpp(i-2,j+1,n);
-        ans%= MOD;
-        ans+= dpp(i+2,j-1,n);
-        ans%= MOD;
-        ans+= dpp(i-2,j-1,n);
-        ans%= MOD;
-        ans+= dpp(i+1,j+2,n);
-        ans%= MOD;
-        ans+= dpp(i+1,j-2,n);
-        ans%= MOD;
-        ans+= dpp(i-1,j+2,n);
-        ans%= MOD;
-        ans+= dpp(i-1,j-2,n);
-        ans%= MOD;
+        
+        for(int k=0;k<8;k++)
+        {
+            ans+= dpp(i+v1[k],j+v2[k],n-1);
+            ans%= MOD;
+        }
         
         
-        return dp[i][j][n+1]=ans;
+        return dp[i][j][n]=ans;
     }
     
     int knightDialer(int n) {
