@@ -27,9 +27,6 @@ public:
                 cnt1+= upper_bound(matrix[i].begin(),matrix[i].end(),mid-1)-matrix[i].begin();
                 cnt2+= (m - (upper_bound(matrix[i].begin(),matrix[i].end(),mid) - matrix[i].begin()));
             }
-            //cout<<k<<"\n";
-            //cout<<mn<<" "<<mx<<"\n";
-            //cout<<mid<<" "<<cnt1<<" "<<cnt2<<"\n";
             
             if(cnt1<k)
             {
@@ -37,7 +34,6 @@ public:
                 else
                 {
                     mn = mid+1;
-                    //k-= cnt1;
                 }
             }
             else
