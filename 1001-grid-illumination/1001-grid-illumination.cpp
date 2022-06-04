@@ -4,7 +4,7 @@ public:
     vector<int> gridIllumination(int n, vector<vector<int>>& lamps, vector<vector<int>>& queries) {
         
         unordered_map<int,unordered_map<int,int>> v;
-        unordered_map<int,int> r,c,d,ud;
+        map<int,int> r,c,d,ud;
         vector<int> anss;
         
         
