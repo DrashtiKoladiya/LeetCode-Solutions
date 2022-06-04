@@ -3,7 +3,7 @@ public:
     vector<vector<int>> a = {{-1,0},{0,-1},{1,0},{0,1},{-1,-1},{1,1},{-1,1},{1,-1},{0,0}};
     vector<int> gridIllumination(int n, vector<vector<int>>& lamps, vector<vector<int>>& queries) {
         
-        unordered_map<int,map<int,int>> v;
+        unordered_map<int,unordered_map<int,int>> v;
         unordered_map<int,int> r,c,d,ud;
         vector<int> anss;
         
