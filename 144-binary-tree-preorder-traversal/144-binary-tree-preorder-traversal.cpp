@@ -12,19 +12,39 @@
 class Solution {
 public:
     vector<int> v;
-    void go(TreeNode* root)
+    void preorderTraversalRecursive(TreeNode* root)
     {
         if(root==NULL) return;
         
         v.push_back(root->val);
-        go(root->left);
-        go(root->right);
+        preorderTraversalRecursive(root->left);
+        preorderTraversalRecursive(root->right);
     }
     vector<int> preorderTraversal(TreeNode* root) {
         
+        stack<TreeNode*> s;
+        if(root==NULL) return {};
+        
         v.clear();
-        go(root);
-        return v;
+        
+        s.push(root);
+        while(1)
+        {
+            if(s.empty()) return v;
+            
+            TreeNode* curr = s.top();
+            s.pop();
+            v.push_back(curr->val);
+            
+            if(curr->right)
+            {
+                s.push(curr->right);
+            }
+            if(curr->left)
+            {
+                s.push(curr->left);
+            }
+        }
         
     }
 };
