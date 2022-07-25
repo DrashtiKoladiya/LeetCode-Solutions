@@ -6,19 +6,11 @@ public:
         vector<pair<int,int>> tmp(sz);
         int i=l,j=mid+1,k=0;
         
-        // // int f=0;
-        // cout<<l<<" "<<mid<<" "<<r<<" s\n";
-        // // if(l==0 && r==(nums.size()-1))
-        // // {
-        // //     f=1;
-        // // }
-        
         while(i<=mid && j<=r)
         {
             if(nums[i].first <= nums[j].first)
             {
                 tmp[k] = nums[i];
-                // cout<<i<<" "<<cnt<<" cc\n";
                 ans[nums[i].second]+= cnt;
                 i++;
             }
@@ -35,7 +27,6 @@ public:
         while(i<=mid)
         {
             tmp[k] = nums[i];
-            // cout<<i<<" "<<cnt<<" cc\n";
             ans[nums[i].second]+= cnt;
             k++,i++;
         }
@@ -66,17 +57,6 @@ public:
         mergeSort(l,mid,nums,ans);
         mergeSort(mid+1,r,nums,ans);
         merge(nums,l,mid,r,ans);
-        // cout<<l<<" "<<mid<<" "<<r<<" f\n";
-        // for(int i=0;i<nums.size();i++)
-        // {
-        //     cout<<nums[i].first<<" ";
-        // }
-        // cout<<"\n";
-        // for(int i=0;i<ans.size();i++)
-        // {
-        //     cout<<ans[i]<<" ";
-        // }
-        // cout<<"\n";
     }
     vector<int> countSmaller(vector<int>& nums) {
         
