@@ -3,7 +3,6 @@ public:
     vector<int> ans;
     void generateNumber(int currDigit, int k, int n, int num)
     {
-        //cout<<num<<" "<<n<<"\n";
         if(n<=0)
         {
             ans.push_back(num);
