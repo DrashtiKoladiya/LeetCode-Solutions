@@ -42,20 +42,7 @@ public:
         for(auto it=m.begin(); it!=m.end();it++)
         {
             vector<pair<int,int>> v = it->second;
-            
-            // for(auto it2:v)
-            // {
-            //     cout<<it2.first<<" "<<it2.second<<" | ";
-            // }
-            // cout<<"\n";
-            
             sort(v.begin(),v.end(),comp);
-            
-            // for(auto it2:v)
-            // {
-            //     cout<<it2.first<<" "<<it2.second<<" | ";
-            // }
-            // cout<<"\n";
             
             vector<int> anslevel;
             for(auto it2:v)
